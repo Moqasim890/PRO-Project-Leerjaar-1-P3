@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>About FitForFun</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../img/favicon.ico" rel="icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- I used a custom bootstrap cause I felt like it. DONT CHANGE ANYTHING. Kind regards, Hernan -->
+    <link href="../css/style.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-white">
+
+    <!-- Load Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <script>
+        fetch('../shared/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Hero Section -->
+    <div class="container-fluid p-0">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="../img/bannerwhy.jpg" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <h3 class="text-primary text-capitalize m-0">Welcome to FitForFun</h3>
+                    <h2 class="display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Your Fitness Journey Starts Here</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <img class="img-fluid mb-4 mb-lg-0" src="../img/steroids.jpeg" alt="Image">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="display-4 font-weight-bold mb-4">More Than Just a Gym</h2>
+                <p>
+                    FitForFun is more than just a fitness center – it's a community of passionate individuals striving to reach their goals. Whether you want to build strength, lose weight, or stay active, we have the best trainers and equipment to support you.
+                </p>
+                <div class="row py-2">
+                    <div class="col-sm-6">
+                        <i class="flaticon-barbell display-2 text-primary"></i>
+                        <h4 class="font-weight-bold">Certified Trainers</h4>
+                        <p>
+                            Train with our highly qualified experts to maximize results.
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="flaticon-medal display-2 text-primary"></i>
+                        <h4 class="font-weight-bold">Award-Winning Facility</h4>
+                        <p>
+                            Voted one of the best fitness centers for outstanding programs and equipment.
+                        </p>
+                    </div>
+                </div>
+                <a href="memberships.html" class="btn btn-lg px-4 btn-outline-primary">Join Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gym Features -->
+    <div class="container feature pt-5">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-primary font-weight-bold">Why Choose Us?</h4>
+            <h4 class="display-4 font-weight-bold">What Makes FitForFun Special</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <div class="row align-items-center">
+                    <div class="col-sm-5">
+                        <img class="img-fluid mb-3 mb-sm-0" src="img/feature-1.jpg" alt="Image">
+                        <i class="flaticon-barbell"></i>
+                    </div>
+                    <div class="col-sm-7">
+                        <h4 class="font-weight-bold">State-of-the-Art Equipment</h4>
+                        <p>
+                            Train with the latest machines and free weights to reach peak performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-5">
+                <div class="row align-items-center">
+                    <div class="col-sm-5">
+                        <img class="img-fluid mb-3 mb-sm-0" src="img/feature-2.jpg" alt="Image">
+                        <i class="flaticon-training"></i>
+                    </div>
+                    <div class="col-sm-7">
+                        <h4 class="font-weight-bold">Personalized Coaching</h4>
+                        <p>
+                            Our trainers create customized workout and nutrition plans to fit your goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-5">
+                <div class="row align-items-center">
+                    <div class="col-sm-5">
+                        <img class="img-fluid mb-3 mb-sm-0" src="img/feature-3.jpg" alt="Image">
+                        <i class="flaticon-trends"></i>
+                    </div>
+                    <div class="col-sm-7">
+                        <h4 class="font-weight-bold">Group Classes</h4>
+                        <p>
+                            Join exciting classes like HIIT, yoga, and strength training for extra motivation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-5">
+                <div class="row align-items-center">
+                    <div class="col-sm-5">
+                        <img class="img-fluid mb-3 mb-sm-0" src="img/feature-4.jpg" alt="Image">
+                        <i class="flaticon-support"></i>
+                    </div>
+                    <div class="col-sm-7">
+                        <h4 class="font-weight-bold">24/7 Gym Access</h4>
+                        <p>
+                            Train anytime, day or night, with our flexible open-door policy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="container py-5">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-primary font-weight-bold">What Our Members Say</h4>
+            <h4 class="display-4 font-weight-bold">Real Stories, Real Results</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card border-0 bg-secondary text-white text-center p-4">
+                    <img class="rounded-circle mx-auto mb-3" src="img/testimonial-1.jpg" width="80" alt="">
+                    <h5 class="text-primary">Alex Johnson</h5>
+                    <p>"I've never felt stronger. The trainers are amazing, and the gym atmosphere is so motivating!"</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 bg-primary text-white text-center p-4">
+                    <img class="rounded-circle mx-auto mb-3" src="img/testimonial-2.jpg" width="80" alt="">
+                    <h5 class="text-white">Sophia Martinez</h5>
+                    <p>"The personalized training plans changed my life. I'm in the best shape I've ever been!"</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 bg-secondary text-white text-center p-4">
+                    <img class="rounded-circle mx-auto mb-3" src="img/testimonial-3.jpg" width="80" alt="">
+                    <h5 class="text-primary">David Williams</h5>
+                    <p>"This gym provides top-tier equipment, expert trainers, and an incredible atmosphere!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

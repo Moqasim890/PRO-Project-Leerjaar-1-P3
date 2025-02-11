@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>FitForFun - Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="../img/favicon.ico" rel="icon">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    
+        <!-- I used a custom bootstrap cause i felt like it. DONT CHANGE ANYTHING. Kind regards
+         Hernan -->
+        <link href="../css/style.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-white">
+        <div id="navbar-placeholder"></div>
+    
+        <script>
+            fetch('../shared/navbar.html')  // Adjusted path to the 'shared' folder
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        </script>
+    </div>
+    
+    <!-- MEMBERSHIPS BRO  -->
+<!-- MEMBERSHIPS BRO -->
+
+<<!-- Memberships Start -->
+<div class="container-fluid position-relative bg-secondary py-5 mt-5"> <!-- Added mt-5 -->
+    <div class="container">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-primary font-weight-bold">Membership Plans</h4>
+            <h4 class="display-4 font-weight-bold text-white">Choose The Best Plan For You</h4>
+        </div>
+        <div class="row">
+            <!-- Basic Plan -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 bg-dark text-center text-white">
+                    <div class="card-body py-4">
+                        <h3 class="text-primary font-weight-bold">Basic Plan</h3>
+                        <h4 class="display-4 font-weight-bold text-white">€19<span class="text-muted font-weight-light">/mo</span></h4>
+                        <ul class="list-unstyled my-4">
+                            <li><i class="fa fa-check text-primary mr-2"></i> Access to Gym</li>
+                            <li><i class="fa fa-check text-primary mr-2"></i> Locker Room Access</li>
+                            <li><i class="fa fa-times text-danger mr-2"></i> Group Classes</li>
+                            <li><i class="fa fa-times text-danger mr-2"></i> Personal Trainer</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-lg">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Standard Plan -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 bg-primary text-center text-white">
+                    <div class="card-body py-4">
+                        <h3 class="text-white font-weight-bold">Standard Plan</h3>
+                        <h4 class="display-4 font-weight-bold text-white">€39<span class="text-muted font-weight-light">/mo</span></h4>
+                        <ul class="list-unstyled my-4">
+                            <li><i class="fa fa-check text-white mr-2"></i> Access to Gym</li>
+                            <li><i class="fa fa-check text-white mr-2"></i> Locker Room Access</li>
+                            <li><i class="fa fa-check text-white mr-2"></i> Group Classes</li>
+                            <li><i class="fa fa-times text-danger mr-2"></i> Personal Trainer</li>
+                        </ul>
+                        <a href="#" class="btn btn-light btn-lg">Join Now</a> <!-- Changed for better contrast -->
+                    </div>
+                </div>
+            </div>
+            <!-- Premium Plan -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 bg-dark text-center text-white">
+                    <div class="card-body py-4">
+                        <h3 class="text-primary font-weight-bold">Premium Plan</h3>
+                        <h4 class="display-4 font-weight-bold text-white">€59<span class="text-muted font-weight-light">/mo</span></h4>
+                        <ul class="list-unstyled my-4">
+                            <li><i class="fa fa-check text-primary mr-2"></i> Access to Gym</li>
+                            <li><i class="fa fa-check text-primary mr-2"></i> Locker Room Access</li>
+                            <li><i class="fa fa-check text-primary mr-2"></i> Group Classes</li>
+                            <li><i class="fa fa-check text-primary mr-2"></i> Personal Trainer</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary btn-lg">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Memberships End -->
+</body>
+</html>

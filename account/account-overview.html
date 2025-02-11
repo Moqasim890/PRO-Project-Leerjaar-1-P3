@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Account Overview | FitForFun</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../img/favicon.ico" rel="icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+    
+    <!-- I used a custom bootstrap cause I felt like it. DONT CHANGE ANYTHING. Kind regards, Hernan -->
+    <link href="../css/style.min.css" rel="stylesheet">
+
+    <style>
+        /* Extra spacing to move content further down */
+        .content-spacing {
+            margin-top: 120px; /* Adjust this value to move it even further */
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div id="navbar-placeholder"></div>
+
+    <script>
+        fetch('../shared/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- ACCOUNT OVERVIEW BRO -->
+    <div class="container content-spacing"> <!-- Added extra spacing class -->
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="card border-0 bg-secondary text-white text-center p-3">
+                    <img src="../img/voorbeeld avatar.jpg" class="rounded-circle mb-3" width="100" alt="User Avatar">
+                    <h4 class="font-weight-bold">Username</h4>
+                    <p class="text-muted">Member since XXXX</p>
+                    <hr class="bg-light">
+                    <ul class="list-unstyled text-left">
+                        <li class="py-2"><i class="fa fa-user text-primary mr-2"></i> <a href="#" class="text-white">Profile</a></li>
+                        <li class="py-2"><i class="fa fa-id-card text-primary mr-2"></i> <a href="#" class="text-white">Membership</a></li>
+                        <li class="py-2"><i class="fa fa-chart-line text-primary mr-2"></i> <a href="#" class="text-white">Progress</a></li>
+                        <li class="py-2"><i class="fa fa-cog text-primary mr-2"></i> <a href="#" class="text-white">Settings</a></li>
+                        <li class="py-2"><i class="fa fa-sign-out-alt text-danger mr-2"></i> <a href="#" class="text-danger">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <div class="card border-0 shadow-sm p-4">
+                    <h3 class="font-weight-bold mb-4">Account Overview</h3>
+
+                    <!-- Membership Details -->
+                    <div class="mb-4">
+                        <h5 class="text-primary font-weight-bold">Membership Plan</h5>
+                        <p><strong>Plan:</strong> Premium Membership</p>
+                        <p><strong>Expires:</strong> March 30, 2025</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Manage Membership</a>
+                    </div>
+
+                    <hr>
+
+                    <!-- Workout Progress -->
+                    <div class="mb-4">
+                        <h5 class="text-primary font-weight-bold">Workout Progress</h5>
+                        <p><strong>Last Workout:</strong> February 10, 2025</p>
+                        <p><strong>Calories Burned:</strong> 850 kcal</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                75% Goal Completed
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">View Progress</a>
+                    </div>
+
+                    <hr>
+
+                    <!-- Billing Info -->
+                    <div class="mb-4">
+                        <h5 class="text-primary font-weight-bold">Billing Information</h5>
+                        <p><strong>Next Payment:</strong> €59 on March 1, 2025</p>
+                        <p><strong>Payment Method:</strong> Visa - **** 1234</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Manage Billing</a>
+                    </div>
+
+                    <hr>
+
+                    <!-- Account Settings -->
+                    <div>
+                        <h5 class="text-primary font-weight-bold">Account Settings</h5>
+                        <a href="#" class="btn btn-outline-danger btn-sm">Delete Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ACCOUNT OVERVIEW END -->
+
+</body>
+</html>
