@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Register | FitForFun</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../img/favicon.ico" rel="icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- I used a custom bootstrap cause I felt like it. DONT CHANGE ANYTHING. Kind regards, Hernan -->
+    <link href="../css/style.min.css" rel="stylesheet">
+
+    <!-- Google Places API for Address Autocomplete -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
+
+    <style>
+        /* Membership Card Styling */
+        .membership-card {
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .membership-card:hover {
+            transform: scale(1.05);
+            border-color: #007bff;
+        }
+
+        .membership-card input {
+            display: none;
+        }
+
+        .membership-card.selected {
+            border: 3px solid #007bff;
+            background-color: #e6f0ff;
+        }
+
+        /* Checkmark Icon */
+        .checkmark {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 25px;
+            height: 25px;
+            background-color: #007bff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .membership-card.selected .checkmark {
+            opacity: 1;
+        }
+
+        /* Hide payment step initially */
+        #payment-step {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- Load Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <script>
+        fetch('../shared/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
+    <!-- Registration Section -->
+    <div class="container-fluid position-relative py-5 mt-7">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm p-4">
+                    <h3 class="font-weight-bold text-center mb-4">Create Your Account</h3>
+
+                    <!-- Membership Selection -->
+                    <div class="mb-4">
+                        <h5 class="text-center font-weight-bold">Choose Your Membership Plan <span class="text-danger">*</span></h5>
+                        <div class="row">
+                            <!-- Basic Plan -->
+                            <div class="col-md-4 mb-3">
+                                <label class="card text-center bg-light p-3 membership-card" onclick="selectMembership('basic')">
+                                    <input type="radio" name="membership" id="basic" value="Basic" required>
+                                    <h5 class="card-title font-weight-bold">Basic Plan</h5>
+                                    <h4 class="text-primary font-weight-bold">€19/month</h4>
+                                    <p class="text-muted">Gym & Locker Access</p>
+                                </label>
+                            </div>
+
+                            <!-- Standard Plan -->
+                            <div class="col-md-4 mb-3">
+                                <label class="card text-center bg-light p-3 membership-card" onclick="selectMembership('standard')">
+                                    <input type="radio" name="membership" id="standard" value="Standard" required>
+                                    <h5 class="card-title font-weight-bold">Standard Plan</h5>
+                                    <h4 class="text-primary font-weight-bold">€39/month</h4>
+                                    <p class="text-muted">Gym, Locker & Classes</p>
+                                </label>
+                            </div>
+
+                            <!-- Premium Plan -->
+                            <div class="col-md-4 mb-3">
+                                <label class="card text-center bg-light p-3 membership-card" onclick="selectMembership('premium')">
+                                    <input type="radio" name="membership" id="premium" value="Premium" required>
+                                    <h5 class="card-title font-weight-bold">Premium Plan</h5>
+                                    <h4 class="text-primary font-weight-bold">€59/month</h4>
+                                    <p class="text-muted">All Access + Trainer</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <form action="../includes/register.inc.php" method="post" onsubmit="return validateMembershipSelection()">
+                        <div class="mb-3">
+                            <label class="form-label">First Name</label>
+                            <input type="text" name="firstname" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Middle Name</label>
+                            <input type="text" name="middlename" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" name="lastname" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Date of Birth</label>
+                            <input type="date" name="dob" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" name="username" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="text" name="phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <input type="text" name="address" id="autocomplete" class="form-control" placeholder="Start typing your address..." required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" name="pwd" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <input type="password" name="confirm_pwd" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+
+                    <div class="mt-3 text-center">
+                        <small>Already have an account? <a href="login.html">Login here</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    
+
+    <script>
+        fetch('../shared/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+
+        // Google Address Autocomplete
+        function initAutocomplete() {
+            var input = document.getElementById("autocomplete");
+            var autocomplete = new google.maps.places.Autocomplete(input, { types: ["geocode"] });
+        }
+        google.maps.event.addDomListener(window, "load", initAutocomplete);
+
+        // Membership selection - click anywhere on the card
+        function selectMembership(id) {
+            document.getElementById(id).checked = true;
+            document.querySelectorAll(".membership-card").forEach(card => card.classList.remove("selected"));
+            document.querySelector(`label[for=${id}]`).classList.add("selected");
+        }
+
+        // Ensure Membership is Selected Before Submitting
+        function validateMembershipSelection() {
+            if (!document.querySelector('input[name="membership"]:checked')) {
+                alert("Please select a membership plan before registering.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

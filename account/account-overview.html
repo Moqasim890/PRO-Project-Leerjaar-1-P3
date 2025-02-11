@@ -31,7 +31,7 @@
     </script>
 
     <!-- ACCOUNT OVERVIEW BRO -->
-    <div class="container content-spacing"> <!-- Added extra spacing class -->
+    <div class="container mt-5"> 
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3">
@@ -100,6 +100,16 @@
         </div>
     </div>
     <!-- ACCOUNT OVERVIEW END -->
+<!--Footer-->
+<div id="footer-placeholder"></div>
 
+<script>
+    fetch('../shared/footer.html')  // Adjusted path to the 'shared' folder
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+</script>
 </body>
 </html>

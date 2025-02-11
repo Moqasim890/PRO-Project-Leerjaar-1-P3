@@ -169,5 +169,16 @@
         </div>
     </div>
 
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('../shared/footer.html')  // Adjusted path to the 'shared' folder
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+
 </body>
 </html>
