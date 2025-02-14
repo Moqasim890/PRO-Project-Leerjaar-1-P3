@@ -232,272 +232,186 @@
     <!-- Subscribe End -->
 
 
-    <!-- Class Timetable Start -->
-    <div class="container gym-feature py-5">
-        <div class="d-flex flex-column text-center mb-5">
-            <h4 class="text-primary font-weight-bold">Class Timetable</h4>
-            <h4 class="display-4 font-weight-bold">Working Hours and Class Time</h4>
-        </div>
-        <div class="tab-class">
-            <ul class="nav nav-pills justify-content-center mb-4">
-                <li class="nav-item">
-                    <a class="nav-link active" data-toggle="pill" href="#class-all">All Classes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#class-cardio">Cardio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#class-crossfit">Crossfit</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#class-powerlifting">Powerlifting</a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div id="class-all" class="container tab-pane p-0 active">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-lg m-0">
-                            <thead class="bg-secondary text-white text-center">
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Monday</th>
-                                    <th>Tuesday</th>
-                                    <th>Wednesday</th>
-                                    <th>Thursday</th>
-                                    <th>Friday</th>
-                                    <th>Saturday</th>
-                                    <th>Sunday</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">6.00am - 8.00am</th>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">10.00am - 12.00am</th>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">5.00pm - 7.00pm</th>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">7.00pm - 9.00pm</th>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .schedule-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        .schedule-table td.active {
+            background-color: #e7f3fe;
+            color: #007bff;
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .modal-header, .modal-footer {
+            background-color: #f8f9fa;
+        }
+        .modal-title {
+            font-weight: bold;
+        }
+    </style>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Lesrooster</h2>
+    <table class="schedule-table">
+        <thead>
+            <tr>
+                <th>Tijd</th>
+                <th>Maandag</th>
+                <th>Dinsdag</th>
+                <th>Woensdag</th>
+                <th>Donderdag</th>
+                <th>Vrijdag</th>
+                <th>Zaterdag</th>
+                <th>Zondag</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>6:00am - 8:00am</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="6:00am - 8:00am" data-day="Maandag" data-class="Cardio" data-trainer="John Deo">Cardio</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="6:00am - 8:00am" data-day="Dinsdag" data-class="Crossfit" data-trainer="Adam Phillips">Crossfit</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="6:00am - 8:00am" data-day="Woensdag" data-class="Power Lifting" data-trainer="James Alien">Power Lifting</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="6:00am - 8:00am" data-day="Donderdag" data-class="Cardio" data-trainer="John Deo">Cardio</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10:00am - 12:00pm</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="10:00am - 12:00pm" data-day="Maandag" data-class="Power Lifting" data-trainer="James Alien">Power Lifting</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="10:00am - 12:00pm" data-day="Dinsdag" data-class="Cardio" data-trainer="John Deo">Cardio</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="10:00am - 12:00pm" data-day="Woensdag" data-class="Crossfit" data-trainer="Adam Phillips">Crossfit</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5:00pm - 7:00pm</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="5:00pm - 7:00pm" data-day="Maandag" data-class="Crossfit" data-trainer="Adam Phillips">Crossfit</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="5:00pm - 7:00pm" data-day="Dinsdag" data-class="Power Lifting" data-trainer="James Alien">Power Lifting</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="5:00pm - 7:00pm" data-day="Woensdag" data-class="Cardio" data-trainer="John Deo">Cardio</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="5:00pm - 7:00pm" data-day="Donderdag" data-class="Crossfit" data-trainer="Adam Phillips">Crossfit</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7:00pm - 9:00pm</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="7:00pm - 9:00pm" data-day="Maandag" data-class="Cardio" data-trainer="John Deo">Cardio</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="7:00pm - 9:00pm" data-day="Dinsdag" data-class="Crossfit" data-trainer="Adam Phillips">Crossfit</td>
+                <td data-toggle="modal" data-target="#lessonModal" data-time="7:00pm - 9:00pm" data-day="Woensdag" data-class="Power Lifting" data-trainer="James Alien">Power Lifting</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="lessonModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Aanmelden voor les</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="lessonForm">
+                    <div class="form-group">
+                        <label for="day">Dag:</label>
+                        <input type="text" class="form-control" id="day" readonly>
                     </div>
-                </div>
-                <div id="class-cardio" class="container tab-pane fade p-0">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-lg m-0">
-                            <thead class="bg-secondary text-white text-center">
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Monday</th>
-                                    <th>Tuesday</th>
-                                    <th>Wednesday</th>
-                                    <th>Thursday</th>
-                                    <th>Friday</th>
-                                    <th>Saturday</th>
-                                    <th>Sunday</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">6.00am - 8.00am</th>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Cardio</h5>John Deo</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">10.00am - 12.00am</th>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td> 
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">5.00pm - 7.00pm</th>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">7.00pm - 9.00pm</th>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="form-group">
+                        <label for="time">Tijd:</label>
+                        <input type="text" class="form-control" id="time" readonly>
                     </div>
-                </div>
-                <div id="class-crossfit" class="container tab-pane fade p-0">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-lg m-0">
-                            <thead class="bg-secondary text-white text-center">
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Monday</th>
-                                    <th>Tuesday</th>
-                                    <th>Wednesday</th>
-                                    <th>Thursday</th>
-                                    <th>Friday</th>
-                                    <th>Saturday</th>
-                                    <th>Sunday</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">6.00am - 8.00am</th>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">10.00am - 12.00am</th>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
-                                    <td></td> 
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">5.00pm - 7.00pm</th>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">7.00pm - 9.00pm</th>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td><h5>Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="form-group">
+                        <label for="class">Les:</label>
+                        <input type="text" class="form-control" id="class" readonly>
                     </div>
-                </div>
-                <div id="class-powerlifting" class="container tab-pane fade p-0">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-lg m-0">
-                            <thead class="bg-secondary text-white text-center">
-                                <tr>
-                                    <th>Time</th>
-                                    <th>Monday</th>
-                                    <th>Tuesday</th>
-                                    <th>Wednesday</th>
-                                    <th>Thursday</th>
-                                    <th>Friday</th>
-                                    <th>Saturday</th>
-                                    <th>Sunday</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">6.00am - 8.00am</th>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">10.00am - 12.00am</th>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td> 
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">5.00pm - 7.00pm</th>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                </tr>
-                                <tr>
-                                    <th class="bg-secondary text-white align-middle">7.00pm - 9.00pm</th>
-                                    <td></td>
-                                    <td><h5>Cardio</h5>John Deo</td>
-                                    <td></td>
-                                    <td><h5>Crossfit</h5>Adam Phillips</td>
-                                    <td></td>
-                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="form-group">
+                        <label for="trainer">Trainer:</label>
+                        <input type="text" class="form-control" id="trainer" readonly>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="name">Uw Naam:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Uw E-mail:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                <button type="button" class="btn btn-primary" onclick="submitForm()">Aanmelden</button>
             </div>
         </div>
     </div>
-    <!-- Class Timetable End -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Functie om modal velden in te vullen
+    $('#lessonModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var time = button.data('time');
+        var day = button.data('day');
+        var lessonClass = button.data('class');
+        var trainer = button.data('trainer');
+
+        var modal = $(this);
+        modal.find('#time').val(time);
+        modal.find('#day').val(day);
+        modal.find('#class').val(lessonClass);
+        modal.find('#trainer').val(trainer);
+    });
+
+    // Functie om formulier te versturen
+    function submitForm() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var day = $('#day').val();
+        var time = $('#time').val();
+        var lessonClass = $('#class').val();
+        var trainer = $('#trainer').val();
+
+        if (name && email) {
+            alert(`U bent succesvol aangemeld voor ${lessonClass} op ${day} van ${time} met trainer ${trainer}.`);
+            $('#lessonForm')[0].reset(); // Reset formulier
+            $('#lessonModal').modal('hide'); // Sluit modal
+        } else {
+            alert('Voer alstublieft uw naam en e-mailadres in.');
+        }
+    }
+</script>
 
 
     <!-- BMI Calculation Start -->
