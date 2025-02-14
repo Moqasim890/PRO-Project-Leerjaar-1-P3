@@ -18,9 +18,18 @@ require_once "../includes/login_view.inc.php";
                     <li class="nav-item">
                         <a href="../index.php" class="nav-link active">Home</a>
                     </li>
+                    <?php
+                    if (!isset($_SESSION["user_id"])) { ?>
                     <li class="nav-item">
                         <a href="../pages/memberships.html" class="nav-link">Memberships</a>
                     </li>
+                    <?php } ?>
+                    <?php
+                    if (isset($_SESSION["user_id"])) { ?>
+                    <li class="nav-item">
+                        <a href="../pages/whyus" class="nav-link">Tips</a>
+                    </li>
+                    <?php } ?>
                     <li class="nav-item">
                         <a href="../pages/whyus.html" class="nav-link">Why Us?</a>
                     </li>

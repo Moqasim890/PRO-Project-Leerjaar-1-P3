@@ -44,11 +44,11 @@ require_once "../includes/login_view.inc.php";
                     <form action="../includes/login.inc.php" method="post">
                         <div class="mb-3">
                             <label class="form-label">Username</label>
-                            <input type="text" name="username" placeholder="Username" class="form-label">
+                            <input type="text" name="username" placeholder="Username" class="form-control form-label">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" name="pwd" placeholder="Password" class="form-label">
+                            <input type="password" name="pwd" placeholder="Password" class="form-control form-label">
                         </div>
                         <?php
                         check_login_errors();

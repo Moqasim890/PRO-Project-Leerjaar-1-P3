@@ -32,153 +32,32 @@ require_once "../includes/login_view.inc.php";
             .catch(error => console.error('Error loading navbar:', error));
     </script>
 
-    <!-- Hero Section -->
-    <div class="container-fluid p-0">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="w-100" src="../img/bannerwhy.jpg" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <h3 class="text-primary text-capitalize m-0">Explore Our Fitness Classes</h3>
-                    <h2 class="display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">Achieve Your Goals with Expert Coaching</h2>
-                </div>
-            </div>
+   
+<div class="container my-5">
+        <div class="text-center mb-4">
+            <h2 class="text-primary">Class Timetable</h2>
+            <p class="lead">View available classes and book your spot!</p>
         </div>
-    </div>
 
-    <!-- Classes Section -->
-    <div class="container py-5">
-        <div class="d-flex flex-column text-center mb-5">
-            <h4 class="text-primary font-weight-bold">Our Classes</h4>
-            <h4 class="display-4 font-weight-bold">Find the Right Class for You</h4>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <h2 class="display-4 font-weight-bold mb-4">Train with the Best</h2>
-                <p>
-                    FitForFun offers a variety of fitness classes for all levels. Whether you're looking to build strength, improve endurance, or just stay active, we have the perfect class for you!
-                </p>
-                <div class="row py-2">
-                    <div class="col-sm-6">
-                        <i class="flaticon-barbell display-2 text-primary"></i>
-                        <h4 class="font-weight-bold">Strength Training</h4>
-                        <p> Build muscle and endurance with guided weightlifting classes.</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <i class="flaticon-treadmill display-2 text-primary"></i>
-                        <h4 class="font-weight-bold">Cardio Workouts</h4>
-                        <p> Burn calories and boost stamina with high-energy cardio sessions.</p>
-                    </div>
-                </div>
-                <?php
-                    if (isset($_SESSION["user_id"])) { ?>
-                     <li class="nav-item">
-                        <a href="memberships.html" class="btn btn-lg px-4 btn-outline-primary">Join a Class</a>
-                    </li>
-                    <?php } ?>
-                
-            </div>
-        </div>
-    </div>
-
-    <!-- Class Timetable -->
-    <div class="container gym-feature py-5">
-        <div class="d-flex flex-column text-center mb-5">
-            <h4 class="text-primary font-weight-bold">Class Timetable</h4>
-            <h4 class="display-4 font-weight-bold">Plan Your Workout Schedule</h4>
-        </div>
+        <!-- Class Schedule Table -->
         <div class="table-responsive">
-            <table class="table table-bordered table-lg m-0">
-                <thead class="bg-secondary text-white text-center">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="bg-secondary text-white">
                     <tr>
+                        <th>Class Name</th>
+                        <th>Date</th>
                         <th>Time</th>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                        <th>Sunday</th>
+                        <th>Availability</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
-                <tbody class="text-center">
-                    <tr>
-                        <th class="bg-secondary text-white align-middle">6.00am - 8.00am</th>
-                        <td>Strength Training</td>
-                        <td>HIIT</td>
-                        <td>Yoga</td>
-                        <td>Cardio Blast</td>
-                        <td>Crossfit</td>
-                        <td>Strength Training</td>
-                        <td>Yoga</td>
-                    </tr>
-                    <tr>
-                        <th class="bg-secondary text-white align-middle">10.00am - 12.00am</th>
-                        <td>Crossfit</td>
-                        <td>Yoga</td>
-                        <td>HIIT</td>
-                        <td>Strength Training</td>
-                        <td>Cardio Blast</td>
-                        <td></td>
-                        <td>Crossfit</td>
-                    </tr>
-                    <tr>
-                        <th class="bg-secondary text-white align-middle">5.00pm - 7.00pm</th>
-                        <td>HIIT</td>
-                        <td>Strength Training</td>
-                        <td>Crossfit</td>
-                        <td>Yoga</td>
-                        <td>Cardio Blast</td>
-                        <td></td>
-                        <td>Strength Training</td>
-                    </tr>
-                    <tr>
-                        <th class="bg-secondary text-white align-middle">7.00pm - 9.00pm</th>
-                        <td>Cardio Blast</td>
-                        <td>Yoga</td>
-                        <td>HIIT</td>
-                        <td>Strength Training</td>
-                        <td>Crossfit</td>
-                        <td>Cardio Blast</td>
-                        <td>Yoga</td>
-                    </tr>
+                <tbody id="class-table-body">
+                    <!-- Classes will be loaded here via JavaScript -->
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Gym Features -->
-    <div class="container feature pt-5">
-        <div class="d-flex flex-column text-center mb-5">
-            <h4 class="text-primary font-weight-bold">Why Join Our Classes?</h4>
-            <h4 class="display-4 font-weight-bold">Maximize Your Potential</h4>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-5">
-                <div class="row align-items-center">
-                    <div class="col-sm-5">
-                        <img class="img-fluid mb-3 mb-sm-0" src="../img/feature-1.jpg" alt="Image">
-                        <i class="flaticon-barbell"></i>
-                    </div>
-                    <div class="col-sm-7">
-                        <h4 class="font-weight-bold">Expert Guidance</h4>
-                        <p> Learn from experienced trainers who push you to your best.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-5">
-                <div class="row align-items-center">
-                    <div class="col-sm-5">
-                        <img class="img-fluid mb-3 mb-sm-0" src="../img/feature-2.jpg" alt="Image">
-                        <i class="flaticon-training"></i>
-                    </div>
-                    <div class="col-sm-7">
-                        <h4 class="font-weight-bold">Personalized Training</h4>
-                        <p> Get a class that fits your level, whether beginner or advanced.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
@@ -191,6 +70,7 @@ require_once "../includes/login_view.inc.php";
             })
             .catch(error => console.error('Error loading footer:', error));
     </script>
+<script src="script.js"></script>
 
 </body>
 </html>
