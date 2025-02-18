@@ -278,6 +278,6 @@ echo _gettext("SQL upload");
 
     public function getSourceContext()
     {
-        return new Source("", "navigation/main.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/navigation/main.twig");
+        return new Source("", "navigation/main.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/navigation/main.twig");
     }
 }

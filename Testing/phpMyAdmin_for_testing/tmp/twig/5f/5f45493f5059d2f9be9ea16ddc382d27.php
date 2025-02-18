@@ -485,6 +485,6 @@ echo _gettext("Close");
 
     public function getSourceContext()
     {
-        return new Source("", "sql/query.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/sql/query.twig");
+        return new Source("", "sql/query.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/sql/query.twig");
     }
 }

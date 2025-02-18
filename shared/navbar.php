@@ -15,48 +15,93 @@ require_once "../includes/login_view.inc.php";
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto p-4 bg-secondary w-100 d-flex justify-content-around">
-                    <li class="nav-item">
-                        <a href="../index.php" class="nav-link active">Home</a>
-                    </li>
+
+
+
+                    <?php
+                    if (!isValidRole(['Admin'])):
+                        ?>
+                        <li class="nav-item">
+                            <a href="../index.php" class="nav-link active">Home</a>
+                        </li>
+                    <?php endif; ?>
+
+
+
+                    <?php
+                    if (isValidRole(['Admin'])):
+                        ?>
+                        <li class="nav-item">
+                            <a href="../pages/admin_dasboard.php" class="nav-link active">Dashboard</a>
+                        </li>
+                    <?php endif; ?>
+
+
+
+
                     <?php
                     if (!isset($_SESSION["user_id"])) { ?>
-                    <li class="nav-item">
-                        <a href="../pages/memberships.html" class="nav-link">Memberships</a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="../pages/memberships.html" class="nav-link">Memberships</a>
+                        </li>
                     <?php } ?>
                     <?php
-                    if (isset($_SESSION["user_id"])) { ?>
-                    <li class="nav-item">
-                        <a href="../pages/whyus" class="nav-link">Tips</a>
-                    </li>
-                    <?php } ?>
-                    <li class="nav-item">
-                        <a href="../pages/whyus.html" class="nav-link">Why Us?</a>
-                    </li>
+                    if (isValidRole(['Medewerker', 'Lid'])):
+                        ?>
+                        <li class="nav-item">
+                            <a href="../pages/whyus" class="nav-link">Tips</a>
+                        </li>
+                        <?php
+                    endif;
+                    ?>
+
+                    <?php
+                    if (!isValidRole(['Admin'])):
+                        ?>
+                        <li class="nav-item">
+                            <a href="../pages/whyus.html" class="nav-link">Why Us?</a>
+                        </li>
+                        <?php
+                    endif;
+                    ?>
+
                     <li class="nav-item">
                         <a href="../pages/classes.php" class="nav-link">Classes</a>
                     </li>
                     <?php
                     if (!isset($_SESSION["user_id"])) { ?>
                         <li class="nav-item">
-                        <a href="../account/login.php" class="nav-link">Log in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../account/register.php" class="nav-link btn btn-primary rounded-pill px-4 text-white">Join Now</a>
-                    </li>
+                            <a href="../account/login.php" class="nav-link">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../account/register.php"
+                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Join Now</a>
+                        </li>
                     <?php } ?>
                     <?php
+                    if (isValidRole(['Admin', "Medewerker"])):
+                        ?>
+                        <li class="nav-item">
+                            <a href="../account/leden-overzicht.php"
+                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Overview</a>
+                        </li>
+                        <?php
+                    endif;
+                    ?>
+
+                    <?php
                     if (isset($_SESSION["user_id"])) { ?>
-                      <li class="nav-item">
-                        <a href="../account/account-overview.php" class="nav-link btn btn-primary rounded-pill px-4 text-white">My account</a>
-                    </li>
-                     <li class="nav-item">
-                        <a href="../account/logout.php" class="nav-link btn btn-primary rounded-pill px-4 text-white">Logout</a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="../account/account-overview.php"
+                                class="nav-link btn btn-primary rounded-pill px-4 text-white">My account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../account/logout.php"
+                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Logout</a>
+                        </li>
                     <?php } ?>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-<!-- Navbar End -->

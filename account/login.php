@@ -34,7 +34,7 @@ require_once "../includes/login_view.inc.php";
             })
             .catch(error => console.error('Error loading navbar:', error));
     </script>
-   
+
     <!-- Login Section -->
     <div class="container-fluid position-relative py-5 mt-7">
         <div class="row justify-content-center">
@@ -83,26 +83,6 @@ require_once "../includes/login_view.inc.php";
     </div>
     <!-- Footer -->
     <div id="footer-placeholder"></div>
-
-    <div class="container mt-5"> 
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3">
-                <div class="card border-0 bg-secondary text-white text-center p-3">
-                    <img src="../img/voorbeeld avatar.jpg" class="rounded-circle mb-3" width="100" alt="User Avatar">
-                    <h4 class="font-weight-bold">Username</h4>
-                    <p class="text-muted">Member since XXXX</p>
-                    <hr class="bg-light">
-                    <ul class="list-unstyled text-left">
-                        <li class="py-2"><i class="fa fa-user text-primary mr-2"></i> <a href="#" class="text-white">Profile</a></li>
-                        <li class="py-2"><i class="fa fa-id-card text-primary mr-2"></i> <a href="#" class="text-white">Membership</a></li>
-                        <li class="py-2"><i class="fa fa-chart-line text-primary mr-2"></i> <a href="#" class="text-white">Progress</a></li>
-                        <li class="py-2"><i class="fa fa-cog text-primary mr-2"></i> <a href="#" class="text-white">Settings</a></li>
-                        <li class="py-2"><i class="fa fa-sign-out-alt text-danger mr-2"></i> <a href="#" class="text-danger">Logout</a></li>
-                    </ul>
-                </div>
-            </div>
-
     <script>
         fetch('../shared/footer.html')
             .then(response => response.text())
@@ -111,6 +91,9 @@ require_once "../includes/login_view.inc.php";
             })
             .catch(error => console.error('Error loading footer:', error));
     </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

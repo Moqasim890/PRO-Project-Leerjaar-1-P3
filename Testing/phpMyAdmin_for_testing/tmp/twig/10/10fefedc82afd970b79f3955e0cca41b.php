@@ -61,6 +61,6 @@ class __TwigTemplate_1b29a6879e2ea43abcbdae0e50497b88 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "login/footer.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/login/footer.twig");
+        return new Source("", "login/footer.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/login/footer.twig");
     }
 }

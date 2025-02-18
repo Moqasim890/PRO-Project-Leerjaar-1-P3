@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost';
+$host = 'p3.host';
 $dbname = 'gymsignup';
 $dbusername = 'root';
-$dbpassword = '';
+$dbpassword = 'ServBay.dev';
 
 try {
     $pdo = new PDO(

@@ -5,7 +5,7 @@ ini_set("session.use_strict_mode", 1);
 
 session_set_cookie_params([
     "lifetime" => "1800",
-    "domain" => "localhost",
+    "domain" => "p3.host",
     "path" => "/",
     "secure" => "true",
     "httponly" => "true"
@@ -60,7 +60,7 @@ function regenerate_session_id()
     $_SESSION["last_regeneration"] = time();
 }
 
-function isValidRole(array $acceptedRoleNames)  :bool {
-    $currentrole = $_SESSION["rol_naam"];
+function isValidRole(array $acceptedRoleNames) : bool {
+    $currentrole = $_SESSION["rol_naam"] ?? null;  // Null coalescing operator to avoid warnings
     return in_array($currentrole, $acceptedRoleNames);
 }
