@@ -1,5 +1,4 @@
 <?php
-// Adjust the paths based on your folder structure.
 require_once "../includes/config_session.inc.php";
 require_once "../includes/register_view.inc.php";
 ?>
@@ -24,7 +23,6 @@ require_once "../includes/register_view.inc.php";
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
 
     <style>
-        /* Membership Card Styling */
         .membership-card {
             cursor: pointer;
             border: 2px solid transparent;
