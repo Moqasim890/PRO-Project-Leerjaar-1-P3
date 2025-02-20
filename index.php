@@ -244,10 +244,11 @@
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color:rgb(0, 0, 0);
         }
         .schedule-table {
             width: 100%;
@@ -261,18 +262,18 @@
             cursor: pointer;
         }
         .schedule-table th {
-            background-color: #007bff;
+            background-color:rgb(255, 0, 0);
             color: white;
         }
         .schedule-table td.active {
-            background-color: #e7f3fe;
-            color: #007bff;
+            background-color:rgb(255, 254, 254);
+            color:rgb(255, 0, 0);
         }
         .modal-content {
             border-radius: 10px;
         }
         .modal-header, .modal-footer {
-            background-color: #f8f9fa;
+            background-color:rgb(255, 255, 255);
         }
         .modal-title {
             font-weight: bold;
