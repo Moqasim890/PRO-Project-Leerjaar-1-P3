@@ -42,7 +42,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card border-0 bg-dark text-center text-white">
                         <div class="card-body py-4">
-                            <h3 class="text-primary font-weight-bold">Manage Members</h3>
+                            <h3 class="text-primary font-weight-bold">Users</h3>
                             <h4 class="display-4 font-weight-bold text-white">
                                 <span class="text-muted font-weight-light"></span>
                             </h4>
@@ -55,7 +55,7 @@
                                 <l><i class="fa fa-check text-primary mr-2"></i> </l>
 
                             </ul>
-                            <a href="../account/leden-overzicht.php" class="btn btn-primary btn-lg">Memberships Overview</a>
+                            <a href="../account/leden-overzicht.php" class="btn btn-primary btn-lg">Manage Users</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card border-0 bg-dark text-center text-white">
                         <div class="card-body py-4">
-                            <h3 class="text-primary font-weight-bold">Manage bookings/lessons</h3>
+                            <h3 class="text-primary font-weight-bold">Bookings/lessons</h3>
                             <h4 class="display-4 font-weight-bold text-white"><span
                                     class="text-muted font-weight-light"></span></h4>
                             <ul class="list-unstyled my-4">
@@ -95,7 +95,7 @@
                                 <li><i class="fa fa-check text-primary mr-2"></i> </li>
                                 <li><i class="fa fa-check text-primary mr-2"></i> </li>
                             </ul>
-                            <a href="#" class="btn btn-primary btn-lg">Manage</a>
+                            <a href="#" class="btn btn-primary btn-lg">Manage bookings/lessons</a>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+
+
 <?php
 require_once "../includes/config_session.inc.php";
 require_once "../includes/login_view.inc.php";
@@ -27,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 
 
-
 <!-- Load Navbar -->
 <div id="navbar-placeholder"></div>
 
@@ -40,38 +41,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .catch(error => console.error('Error loading navbar:', error));
 </script>
 
+
+
 <?php
     if (isset($_SESSION["user_id"])) { ?>
-<div class="d-flex flex-column align-items-center text-center mb-5">
-    <form action="classes.php" method="post" class="w-50 p-3 bg-dark rounded-3 shadow">
-        <div class="input-group">
-            <input type="search" name="Naam" class="form-control form-control-lg border-0 shadow-sm" placeholder="Search for classes">
-            <button class="btn btn-primary btn-lg px-4">Search</button>
+        <div class="d-flex flex-column align-items-center text-center mb-5">
+            <form action="classes.php" method="post" class="w-50 p-3 bg-dark rounded-3 shadow">
+                <div class="input-group">
+                    <input type="search" name="Naam" class="form-control form-control-lg border-0 shadow-sm" placeholder="Search for classes">
+                    <button class="btn btn-primary btn-lg px-4">Search</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
-<?php } ?>
+        <?php } ?>
+  
 
-<?php
-    if (!isset($_SESSION["user_id"])) { ?>
-<div class="d-flex flex-column text-center mb-5">
-        <h4 class="display-4 font-weight-bold">Log in to book a lesson</h4>
-    </div>
-    <?php } ?> 
-
-
-<?php
-    if (isset($_SESSION["user_id"])) { ?>
 <div class="container gym-feature py-5">
     <div class="d-flex flex-column text-center mb-5">
         <h4 class="text-primary font-weight-bold">Class Timetable</h4>
         <h4 class="display-4 font-weight-bold">Working Hours and Class Time</h4>
     </div>
-    <?php } ?>
+    <div class="container gym-feature py-5 text-center">
     <?php
-    if (isset($_SESSION["user_id"])) { ?>
+        if (isValidRole(['Admin'])):
+        ?>
+        <a href="../crud/gebruiker.php"
+        class=" btn btn-primary rounded-pill px-4 text-white">Overview</a>
+        <?php
+        endif;
+        ?>
+        </div>
     <div> <?php GetClassesWithName($Naam); ?></div>
-    <?php } ?>
 </div>
 
 
@@ -85,3 +85,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+<!-- <?php
+    if (isset($_SESSION["user_id"])) { ?>
+<div class="d-flex flex-column align-items-center text-center mb-5">
+    <form action="classes.php" method="post" class="w-50 p-3 bg-dark rounded-3 shadow">
+        <div class="input-group">
+            <input type="search" name="Naam" class="form-control form-control-lg border-0 shadow-sm" placeholder="Search for classes">
+            <button class="btn btn-primary btn-lg px-4">Search</button>
+        </div>
+    </form>
+</div>
+<?php } ?> -->

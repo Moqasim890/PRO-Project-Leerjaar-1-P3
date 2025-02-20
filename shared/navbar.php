@@ -5,7 +5,7 @@ require_once "../includes/login_view.inc.php";
 ?>
 
 <div class="container-fluid p-0">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3  w-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3  w-100 sticky-top">
         <div class="container">
             <a href="#" class="navbar-brand">
                 <h1 class="m-0 display-4 font-weight-bold text-uppercase text-white">FitForFun</h1>
@@ -82,8 +82,8 @@ require_once "../includes/login_view.inc.php";
                     if (isValidRole(['Admin', "Medewerker"])):
                         ?>
                         <li class="nav-item">
-                            <a href="../account/leden-overzicht.php"
-                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Overview</a>
+                            <a href="../crud/gebruiker.php"
+                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Users Overview</a>
                         </li>
                         <?php
                     endif;
