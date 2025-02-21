@@ -108,7 +108,7 @@ function GetClassesWithName($Naam = null)
 
                         <?php
                         if (empty($result)) {
-                            echo "<tr><td colspan='4'>Nothing found</td></tr>";
+                            echo "<tr><td colspan='7'>Nothing found</td></tr>";
                         } else {
                             foreach ($result as $row) {
                                 echo "<tr>
