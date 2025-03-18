@@ -41,7 +41,7 @@ require_once "../includes/login_view.inc.php";
 
     <?php
     if (isValidRole(['Lid', 'Medewerker', 'Admin'])):
-        ?>
+    ?>
         <!-- ACCOUNT OVERVIEW BRO -->
         <div class="container mt-5">
             <div class="row">
@@ -75,13 +75,24 @@ require_once "../includes/login_view.inc.php";
                         <!-- Membership Details -->
                         <div class="mb-4">
                             <h5 class="text-primary font-weight-bold">Membership Plan</h5>
-                            <p><strong>Plan:</strong> subscription <?php echo getUserInfo()["rolnaam"]; ?></p>
-                            <p><strong>Expires:</strong> </p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Manage Membership</a>
+                            <?php
+                            if (isValidRole(['Medewerker', 'Admin'])):
+                            ?>
+                                <p><strong>Role:</strong>
+                                <?php
+                                echo getUserInfo()["rolnaam"];
+                            endif;
+                                ?></p>
+
+                                <?php
+                                if (isValidRole(['Medewerker', 'Lid'])):
+                                ?>
+                                    <p><strong>Expires:</strong> </p>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Manage Membership</a>
                         </div>
 
-                        <hr>
 
+                        <hr>
                         <!-- Workout Progress -->
                         <div class="mb-4">
                             <h5 class="text-primary font-weight-bold">Workout Progress</h5>
@@ -104,7 +115,11 @@ require_once "../includes/login_view.inc.php";
                             <p><strong>Next Payment:</strong> €59 on March 1, 2025</p>
                             <p><strong>Payment Method:</strong> Visa - **** 1234</p>
                             <a href="#" class="btn btn-outline-primary btn-sm">Manage Billing</a>
+                        <?php
+                                endif;
+                        ?>
                         </div>
+
 
                         <hr>
 
@@ -117,15 +132,14 @@ require_once "../includes/login_view.inc.php";
                 </div>
             </div>
         </div>
-        <?php
+    <?php
     endif;
     ?>
-    <!-- ACCOUNT OVERVIEW END -->
     <!--Footer-->
     <div id="footer-placeholder"></div>
 
     <script>
-        fetch('../shared/footer.html')  // Adjusted path to the 'shared' folder
+        fetch('../shared/footer.html') // Adjusted path to the 'shared' folder
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;

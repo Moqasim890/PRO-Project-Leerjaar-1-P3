@@ -65,7 +65,7 @@ try {
                 <p><strong>Datum Gewijzigd:</strong> <?= htmlspecialchars($gebruiker->DatumGewijzigd) ?></p>
             </div>
             <div class="card-footer text-center">
-                <a href="index.php" class="btn btn-secondary">Terug naar Overzicht</a>
+                <a href="gebruiker.php" class="btn btn-secondary">Terug naar Overzicht</a>
                 <a href="update.php?id=<?= $gebruiker->Id ?>" class="btn btn-warning">Profiel Bewerken</a>
                 <a href="delete.php?id=<?= $gebruiker->Id ?>" class="btn btn-danger" onclick="return confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');">Profiel Verwijderen</a>
             </div>

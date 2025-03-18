@@ -1,5 +1,6 @@
 <!-- Navbar Start -->
 <?php
+require_once "../config/config.php";
 require_once "../includes/config_session.inc.php";
 require_once "../includes/login_view.inc.php";
 ?>
@@ -20,7 +21,7 @@ require_once "../includes/login_view.inc.php";
 
                     <?php
                     if (!isValidRole(['Admin'])):
-                        ?>
+                    ?>
                         <li class="nav-item">
                             <a href="../index.php" class="nav-link active">Home</a>
                         </li>
@@ -30,7 +31,7 @@ require_once "../includes/login_view.inc.php";
 
                     <?php
                     if (isValidRole(['Admin'])):
-                        ?>
+                    ?>
                         <li class="nav-item">
                             <a href="../pages/admin_dasboard.php" class="nav-link active">Dashboard</a>
                         </li>
@@ -47,24 +48,33 @@ require_once "../includes/login_view.inc.php";
                     <?php } ?>
                     <?php
                     if (isValidRole(['Medewerker', 'Lid'])):
-                        ?>
-                        <li class="nav-item">
+                    ?>
+                        <!-- <li class="nav-item">
                             <a href="../pages/whyus" class="nav-link">Tips</a>
-                        </li>
-                        <?php
+                        </li> -->
+                    <?php
                     endif;
                     ?>
 
                     <?php
                     if (!isValidRole(['Admin'])):
-                        ?>
+                    ?>
                         <li class="nav-item">
                             <a href="../pages/whyus.html" class="nav-link">Why Us?</a>
                         </li>
-                        <?php
+                    <?php
                     endif;
                     ?>
 
+                    <?php
+                    if (isValidRole(['Lid'])):
+                    ?>
+                        <li class="nav-item">
+                            <a href="../resevering/overview_reservering.php" class="nav-link">Reservation</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
                     <li class="nav-item">
                         <a href="../pages/classes.php" class="nav-link">Classes</a>
                     </li>
@@ -75,20 +85,29 @@ require_once "../includes/login_view.inc.php";
                         </li>
                         <li class="nav-item">
                             <a href="../account/register.php"
-                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Join Now</a>
+                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Register</a>
                         </li>
                     <?php } ?>
                     <?php
-                    if (isValidRole(['Admin', "Medewerker"])):
-                        ?>
+                    if (isValidRole(['Admin'])):
+                    ?>
                         <li class="nav-item">
                             <a href="../crud/gebruiker.php"
                                 class="nav-link btn btn-primary rounded-pill px-4 text-white">Users Overview</a>
                         </li>
-                        <?php
+                    <?php
                     endif;
                     ?>
-
+                    <?php
+                    if (isValidRole(['Medewerker'])):
+                    ?>
+                        <li class="nav-item">
+                            <a href="../account/leden-overzicht.php"
+                                class="nav-link btn btn-primary rounded-pill px-4 text-white">Member Overview</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
                     <?php
                     if (isset($_SESSION["user_id"])) { ?>
                         <li class="nav-item">

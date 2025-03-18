@@ -49,9 +49,9 @@ CREATE TABLE Lid
     ,Voornaam         VARCHAR(50)                    NOT NULL
     ,Tussenvoegsel    VARCHAR(10)                        NULL
     ,Achternaam       VARCHAR(50)                    NOT NULL
-    ,Relatienummer    MEDIUMINT                      NOT NULL
+    ,Relatienummer    VARCHAR(20)                      NOT NULL
     ,Mobiel           VARCHAR(20)                    NOT NULL
-    ,Email            VARCHAR(100)                   NOT NULL    UNIQUE
+    ,Email            VARCHAR(100)                   NOT NULL    
     ,IsActief         BIT                            NOT NULL    DEFAULT 1
     ,Opmerking        VARCHAR(250)                        NULL
     ,DatumAangemaakt  DATETIME(6)                    NOT NULL    DEFAULT CURRENT_TIMESTAMP(6)
@@ -59,6 +59,20 @@ CREATE TABLE Lid
     ,CONSTRAINT       PK_Lid                        PRIMARY KEY CLUSTERED(Id)
 ) ENGINE=InnoDB;
  
+ CREATE TABLE Medewerker (
+    Id INT NOT NULL AUTO_INCREMENT,
+    Voornaam VARCHAR(50) NOT NULL,
+    Tussenvoegsel VARCHAR(10) NULL,
+    Achternaam VARCHAR(50) NOT NULL,
+    Nummer MEDIUMINT NOT NULL,
+    Medewerkersoort VARCHAR(20) NOT NULL CHECK (Medewerkersoort IN ('Manager', 'Beheerder', 'Diskmedewerker')),
+    Isactief BIT NOT NULL,
+    Opmerking VARCHAR(250) NULL,
+    Datumaangemaakt DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+    Datumgewijzigd DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+    PRIMARY KEY (Id)
+);
+
  
  
 CREATE TABLE Les

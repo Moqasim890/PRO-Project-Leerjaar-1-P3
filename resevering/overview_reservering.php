@@ -93,7 +93,7 @@ try {
             </table>
         </div>
     <?php else: ?>
-        <div class="alert alert-info text-center">Geen reserveringen gevonden.</div>
+        <div class="alert alert-info text-center">No reservation found.</div>
     <?php endif; ?>
 </div>
 </body>

@@ -1,3 +1,17 @@
+<?php
+require_once "../includes/config_session.inc.php";
+
+
+
+if (!isValidRole(['Admin']))
+{
+    header("Location: localhost:8000");
+    die();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,7 +88,7 @@
                                 <li><i class="fa fa-check text-primary mr-2"></i> </li>
                                 <li><i class="fa fa-check text-primary mr-2"></i> </li>
                             </ul>
-                            <a href="../account/Medewerker-overzicht.php" class="btn btn-light btn-lg">Employee
+                            <a href="../account/Medewerker-overzicht.php" class="btn btn-light btn-lg">Employees
                                 Overview</a>
                             <!-- Changed for better contrast -->
                         </div>

@@ -19,31 +19,37 @@ function get_user(PDO $pdo, string $username): mixed
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
-/**
- * Geef bepaalde leden op met de rol Lid.
- * @param PDO $pdo
- * @param mixed $Rol 
- * @return array
- */
-function ZoekLedenMetRole(PDO $pdo, $Rol, $Achternaam = null): array
+
+function ZoekLedenMetRole(PDO $pdo, $Achternaam = null): array
 {
     $zoukOpNaam = false;
-    $sql = "SELECT g.Id, g.Voornaam, g.Tussenvoegsel, g.Achternaam, g.Gebruikersnaam, r.Naam \n"
-        . "FROM gebruiker g\n"
-        . "LEFT JOIN rol r ON r.GebruikerId = g.Id\n"
-        . "WHERE Naam = :Rol \n";
+    $sql = "SELECT l.Voornaam, l.Tussenvoegsel, l.Achternaam, l.email, l.mobiel, l.relatienummer, Datumaangemaakt\n"
+        . "FROM lid l\n";
     if ($Achternaam !== null) {
-        $sql .= "AND g.Achternaam like :Achternaam\n";
+        $sql .= "WHERE l.Achternaam like :Achternaam\n";
         $zoukOpNaam = true;
     }
-    $sql .= "ORDER BY g.Voornaam;\n";
+    $sql .= "ORDER BY l.relatienummer ASC;\n";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(":Rol", $Rol);
     if ($zoukOpNaam === true) {
         $like = "%{$Achternaam}%";
         $stmt->bindParam(":Achternaam", $like);
     }
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function ZoekEmployeeMetRole(PDO $pdo): array
+{
+    $sql = "SELECT m.Voornaam, m.Tussenvoegsel, m.Achternaam, m.Nummer, m.Medewerkersoort, Datumaangemaakt
+    FROM medewerker m\n
+    ORDER BY m.Nummer ASC;\n";
+
+    $stmt = $pdo->prepare($sql);
+    
     $stmt->execute();
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

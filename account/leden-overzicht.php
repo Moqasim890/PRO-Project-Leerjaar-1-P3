@@ -51,15 +51,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </form>
 </div>
 
-    <?php getUsersWithROle('Lid', $Achternaam); ?>
-
+    
+    <?php getUsersWithROle( $Achternaam); ?>
+    <a style="margin-left: 20px; font-size: 1.1em; font-weight: 700;" href="/account/new-lid.php">Add a new member</a>
     <?php
     if (isValidRole(['Admin'])):
         ?>
-        <a href="Medewerker-Overzicht.php">Medewerker Overzicht</a>
+        <a style="margin-left: 20px; font-size: 1.1em; font-weight: 700;" href="Medewerker-Overzicht.php">Employee Overview</a>
         <?php
     endif;
     ?>
+
+    
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

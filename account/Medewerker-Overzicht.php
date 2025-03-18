@@ -31,9 +31,9 @@ require_once "../includes/login_model.inc.php";
             .catch(error => console.error('Error loading navbar:', error));
     </script>
 
- <?php getUsersWithROle('Medewerker'); ?>
+ <?php getEmployeesWithROle('Medewerker'); ?>
 
- <a href="leden-Overzicht.php">leden Overzicht</a>
+ <a style="margin-left: 20px; font-size: 1.1em; font-weight: 700;" href="leden-Overzicht.php">leden Overzicht</a>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
