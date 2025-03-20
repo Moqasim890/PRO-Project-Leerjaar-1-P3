@@ -60,7 +60,7 @@ function regenerate_session_id()
     $_SESSION["last_regeneration"] = time();
 }
 
-function isValidRole(array $acceptedRoleNames)  :bool {
-    $currentrole = $_SESSION["rol_naam"];
+function isValidRole(array $acceptedRoleNames) : bool {
+    $currentrole = $_SESSION["rol_naam"] ?? null;  // Null coalescing operator to avoid warnings
     return in_array($currentrole, $acceptedRoleNames);
 }

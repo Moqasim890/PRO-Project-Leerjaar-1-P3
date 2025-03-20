@@ -13,18 +13,18 @@ function get_username(object $pdo, string $username): ?string
     return $result["Gebruikersnaam"] ?? null;
 }
 
-function set_user(
-    object $pdo,
-    string $firstname,
-    string $middlename,
-    string $lastname,
-    string $username,
-    string $pwd,
-): void {
-    $query = "INSERT INTO gebruiker 
-    (Voornaam, Tussenvoegsel, Achternaam, Gebruikersnaam, Wachtwoord, IsIngelogd, Ingelogd, Uitgelogd, IsActief, Opmerking) 
-    VALUES 
-    (:Voornaam, :Tussenvoegsel, :Achternaam, :Gebruikersnaam, :Wachtwoord, 0, NULL, NULL, 1, NULL);";
+    function set_user(
+        object $pdo,
+        string $firstname,
+        string $middlename,
+        string $lastname,
+        string $username,
+        string $pwd,
+    ): void {
+        $query = "INSERT INTO gebruiker 
+        (Voornaam, Tussenvoegsel, Achternaam, Gebruikersnaam, Wachtwoord, IsIngelogd, Ingelogd, Uitgelogd, IsActief, Opmerking) 
+        VALUES 
+        (:Voornaam, :Tussenvoegsel, :Achternaam, :Gebruikersnaam, :Wachtwoord, 0, NULL, NULL, 1, NULL);";
 
 
 

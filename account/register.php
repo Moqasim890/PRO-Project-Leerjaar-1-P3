@@ -1,4 +1,5 @@
 <?php
+// Adjust the paths based on your folder structure.
 require_once "../includes/config_session.inc.php";
 require_once "../includes/register_view.inc.php";
 ?>
@@ -14,7 +15,7 @@ require_once "../includes/register_view.inc.php";
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
 
-    
+
     <!-- I used a custom bootstrap cause I felt like it. DONT CHANGE ANYTHING. Kind regards, Hernan -->
     <link rel="stylesheet" href="../css/css/reset.css">
     <link href="../css/style.min.css" rel="stylesheet">
@@ -23,6 +24,7 @@ require_once "../includes/register_view.inc.php";
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
 
     <style>
+        /* Membership Card Styling */
         .membership-card {
             cursor: pointer;
             border: 2px solid transparent;
@@ -97,11 +99,13 @@ require_once "../includes/register_view.inc.php";
 
                     <!-- Membership Selection -->
                     <div class="mb-4">
-                        <h5 class="text-center font-weight-bold">Choose Your Membership Plan <span class="text-danger">*</span></h5>
+                        <h5 class="text-center font-weight-bold">Choose Your Membership Plan <span
+                                class="text-danger">*</span></h5>
                         <div class="row">
                             <!-- Basic Plan -->
                             <div class="col-md-4 mb-3">
-                                <label class="card text-center bg-light p-3 membership-card" onclick="selectMembership('basic')">
+                                <label class="card text-center bg-light p-3 membership-card"
+                                    onclick="selectMembership('basic')">
                                     <input type="radio" name="membership" id="basic" value="Basic" required>
                                     <h5 class="card-title font-weight-bold">Basic Plan</h5>
                                     <h4 class="text-primary font-weight-bold">€19/month</h4>
@@ -111,7 +115,8 @@ require_once "../includes/register_view.inc.php";
 
                             <!-- Standard Plan -->
                             <div class="col-md-4 mb-3">
-                                <label class="card text-center bg-light p-3 membership-card" onclick="selectMembership('standard')">
+                                <label class="card text-center bg-light p-3 membership-card"
+                                    onclick="selectMembership('standard')">
                                     <input type="radio" name="membership" id="standard" value="Standard" required>
                                     <h5 class="card-title font-weight-bold">Standard Plan</h5>
                                     <h4 class="text-primary font-weight-bold">€39/month</h4>
@@ -121,7 +126,8 @@ require_once "../includes/register_view.inc.php";
 
                             <!-- Premium Plan -->
                             <div class="col-md-4 mb-3">
-                                <label class="card text-center bg-light p-3 membership-card" onclick="selectMembership('premium')">
+                                <label class="card text-center bg-light p-3 membership-card"
+                                    onclick="selectMembership('premium')">
                                     <input type="radio" name="membership" id="premium" value="Premium" required>
                                     <h5 class="card-title font-weight-bold">Premium Plan</h5>
                                     <h4 class="text-primary font-weight-bold">€59/month</h4>
@@ -132,11 +138,12 @@ require_once "../includes/register_view.inc.php";
                     </div>
 
                     <!-- Registration Form -->
-                    <form action="../includes/register.inc.php" method="post" onsubmit="return validateMembershipSelection()">
-                    <?php
+                    <form action="../includes/register.inc.php" method="post"
+                        onsubmit="return validateMembershipSelection()">
+                        <?php
                         check_signup_errors();
-                    ?>    
-                    <div class="mb-3">
+                        ?>
+                        <div class="mb-3">
                             <label class="form-label">First Name</label>
                             <input type="text" name="firstname" class="form-control">
                         </div>
@@ -169,7 +176,7 @@ require_once "../includes/register_view.inc.php";
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
-    
+
 
     <script>
         fetch('../shared/footer.html')
@@ -202,6 +209,9 @@ require_once "../includes/register_view.inc.php";
             return true;
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

@@ -77,6 +77,6 @@ echo _gettext("Close");
 
     public function getSourceContext()
     {
-        return new Source("", "modals/unhide_nav_item.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/modals/unhide_nav_item.twig");
+        return new Source("", "modals/unhide_nav_item.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/modals/unhide_nav_item.twig");
     }
 }

@@ -78,6 +78,6 @@ echo _gettext("Continue");
 
     public function getSourceContext()
     {
-        return new Source("", "database/structure/bulk_action_modal.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/database/structure/bulk_action_modal.twig");
+        return new Source("", "database/structure/bulk_action_modal.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/database/structure/bulk_action_modal.twig");
     }
 }

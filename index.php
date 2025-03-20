@@ -1,3 +1,11 @@
+<?php
+
+require_once "includes/config_session.inc.php";
+require_once "includes/login_view.inc.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +46,7 @@
 
                         <?php
                         if (!isset($_SESSION["user_id"])) { ?>
-                        <a href="" class="btn btn-lg btn-outline-light mt-3 mt-md-5 py-md-3 px-md-5">Join Us Now</a>
+                        <a href="account/register.php" class="btn btn-lg btn-outline-light mt-3 mt-md-5 py-md-3 px-md-5">Join Us Now</a>
                         <?php } ?>
 
                         <?php
@@ -66,7 +74,10 @@
                 <p>
                     Unlock your true potential with our expert-led bodybuilding sessions. Whether you're a beginner or a seasoned athlete, our tailored workouts and nutritional guidance will help you achieve maximum muscle growth and strength.
                 </p>
-                <a href="" class="btn btn-lg btn-outline-light mt-4 px-4">Join Now</a>
+                <?php
+                        if (!isset($_SESSION["user_id"])) { ?>
+                <a href="account/register.php" class="btn btn-lg btn-outline-light mt-4 px-4">Join Now</a>
+                <?php } ?>
             </div>
         </div>
         <div class="col-md-6 p-0">
@@ -76,7 +87,10 @@
                 <p>
                     Take your training to the next level with high-intensity workouts designed for muscle endurance, core strength, and explosive power. Join us to build a stronger, more athletic physique and push your limits.
                 </p>
-                <a href="" class="btn btn-lg btn-outline-light mt-4 px-4">Join Now</a>
+                <?php
+                        if (!isset($_SESSION["user_id"])) { ?>
+                <a href="account/register.php" class="btn btn-lg btn-outline-light mt-4 px-4">Join Now</a>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -244,11 +258,10 @@
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color:rgb(0, 0, 0);
+            background-color: #f8f9fa;
         }
         .schedule-table {
             width: 100%;
@@ -262,18 +275,18 @@
             cursor: pointer;
         }
         .schedule-table th {
-            background-color:rgb(255, 0, 0);
+            background-color: #007bff;
             color: white;
         }
         .schedule-table td.active {
-            background-color:rgb(255, 254, 254);
-            color:rgb(255, 0, 0);
+            background-color: #e7f3fe;
+            color: #007bff;
         }
         .modal-content {
             border-radius: 10px;
         }
         .modal-header, .modal-footer {
-            background-color:rgb(255, 255, 255);
+            background-color: #f8f9fa;
         }
         .modal-title {
             font-weight: bold;
@@ -356,73 +369,131 @@
                         <label for="day">Dag:</label>
                         <input type="text" class="form-control" id="day" readonly>
                     </div>
-                    <div class="form-group">
-                        <label for="time">Tijd:</label>
-                        <input type="text" class="form-control" id="time" readonly>
+                </div>
+                <div id="class-crossfit" class="container tab-pane fade p-0">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-lg m-0">
+                            <thead class="bg-secondary text-white text-center">
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">6.00am - 8.00am</th>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
+                                    <td></td>
+                                    <td><h5>Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">10.00am - 12.00am</th>
+                                    <td></td>
+                                    <td><h5>Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
+                                    <td></td> 
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">5.00pm - 7.00pm</th>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
+                                    <td></td>
+                                    <td><h5>Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">7.00pm - 9.00pm</th>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Crossfit</h5>Adam Phillips</td>
+                                    <td></td>
+                                    <td><h5>Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="form-group">
-                        <label for="class">Les:</label>
-                        <input type="text" class="form-control" id="class" readonly>
+                </div>
+                <div id="class-powerlifting" class="container tab-pane fade p-0">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-lg m-0">
+                            <thead class="bg-secondary text-white text-center">
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                    <th>Saturday</th>
+                                    <th>Sunday</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">6.00am - 8.00am</th>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td><h5>Crossfit</h5>Adam Phillips</td>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">10.00am - 12.00am</th>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td><h5>Crossfit</h5>Adam Phillips</td>
+                                    <td></td> 
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">5.00pm - 7.00pm</th>
+                                    <td><h5>Crossfit</h5>Adam Phillips</td>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td><h5>Crossfit</h5>Adam Phillips</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-secondary text-white align-middle">7.00pm - 9.00pm</th>
+                                    <td></td>
+                                    <td><h5>Cardio</h5>John Deo</td>
+                                    <td></td>
+                                    <td><h5>Crossfit</h5>Adam Phillips</td>
+                                    <td></td>
+                                    <td class="bg-primary text-white"><h5 class="text-white">Power Lifting</h5>James Alien</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="form-group">
-                        <label for="trainer">Trainer:</label>
-                        <input type="text" class="form-control" id="trainer" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Uw Naam:</label>
-                        <input type="text" class="form-control" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Uw E-mail:</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
-                <button type="button" class="btn btn-primary" onclick="submitForm()">Aanmelden</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    // Functie om modal velden in te vullen
-    $('#lessonModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var time = button.data('time');
-        var day = button.data('day');
-        var lessonClass = button.data('class');
-        var trainer = button.data('trainer');
-
-        var modal = $(this);
-        modal.find('#time').val(time);
-        modal.find('#day').val(day);
-        modal.find('#class').val(lessonClass);
-        modal.find('#trainer').val(trainer);
-    });
-
-    // Functie om formulier te versturen
-    function submitForm() {
-        var name = $('#name').val();
-        var email = $('#email').val();
-        var day = $('#day').val();
-        var time = $('#time').val();
-        var lessonClass = $('#class').val();
-        var trainer = $('#trainer').val();
-
-        if (name && email) {
-            alert(`U bent succesvol aangemeld voor ${lessonClass} op ${day} van ${time} met trainer ${trainer}.`);
-            $('#lessonForm')[0].reset(); // Reset formulier
-            $('#lessonModal').modal('hide'); // Sluit modal
-        } else {
-            alert('Voer alstublieft uw naam en e-mailadres in.');
-        }
-    }
-</script>
+    <!-- Class Timetable End -->
 
 
     <!-- BMI Calculation Start -->
@@ -485,7 +556,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-5">
                 <div class="card border-0 bg-secondary text-center text-white">
-                    <img class="card-img-top" src="img/team-1.jpg" alt="">
+                    <img class="card-img-top" src="https://pbs.twimg.com/media/F_9LX7jXwAE91V1.jpg" alt="">
                     <div class="card-social d-flex align-items-center justify-content-center">
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -493,14 +564,14 @@
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                     <div class="card-body bg-secondary">
-                        <h4 class="card-title text-primary">Trainer Name</h4>
+                        <h4 class="card-title text-primary">qdkjqhiuqyweriu</h4>
                         <p class="card-text">Trainer</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <div class="card border-0 bg-secondary text-center text-white">
-                    <img class="card-img-top" src="img/team-2.jpg" alt="">
+                    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/9/9c/George_Floyd.png" alt="">
                     <div class="card-social d-flex align-items-center justify-content-center">
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -508,14 +579,14 @@
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                     <div class="card-body bg-secondary">
-                        <h4 class="card-title text-primary">Trainer Name</h4>
+                        <h4 class="card-title text-primary">George Floyd</h4>
                         <p class="card-text">Trainer</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <div class="card border-0 bg-secondary text-center text-white">
-                    <img class="card-img-top" src="img/team-3.jpg" alt="">
+                    <img class="card-img-top" src="https://scontent-ams4-1.cdninstagram.com/v/t51.2885-15/475989027_18054454106293370_392408897564553565_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEwODAuc2RyLmY3NTc2MS5kZWZhdWx0X2ltYWdlIn0&_nc_ht=scontent-ams4-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2AE-jnP2TzA7-iNbUSqIGtwRDW-Il_oUsEV6G46G47jkACoc_Tn-KKaZjg6EnoyYkz0&_nc_ohc=HjXWzCplFr8Q7kNvgHzlNnq&_nc_gid=839ba0532f6144739cf1f806aaf9c699&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzU2MjE1ODU0MjQ5ODE4MzU2OQ%3D%3D.3-ccb7-5&oh=00_AYDH6hHLAwBX6u28sI-5M-jBIwKJ-3XacM1wTDMaa_er2w&oe=67BA415F&_nc_sid=10d13b" alt="">
                     <div class="card-social d-flex align-items-center justify-content-center">
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 40px; height: 40px;" href="#"><i class="fab fa-facebook-f"></i></a>

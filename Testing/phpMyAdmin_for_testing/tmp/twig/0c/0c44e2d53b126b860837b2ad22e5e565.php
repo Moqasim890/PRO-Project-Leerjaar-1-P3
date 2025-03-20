@@ -83,6 +83,6 @@ class __TwigTemplate_d593b7c412c0c3e19b3a7aacf10fc941 extends Template
 
     public function getSourceContext()
     {
-        return new Source("", "navigation/tree/state.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/navigation/tree/state.twig");
+        return new Source("", "navigation/tree/state.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/navigation/tree/state.twig");
     }
 }

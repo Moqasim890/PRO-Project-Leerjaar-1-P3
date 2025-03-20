@@ -227,6 +227,6 @@ echo _gettext("Continue");
 
     public function getSourceContext()
     {
-        return new Source("", "database/structure/check_all_tables.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/database/structure/check_all_tables.twig");
+        return new Source("", "database/structure/check_all_tables.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/database/structure/check_all_tables.twig");
     }
 }

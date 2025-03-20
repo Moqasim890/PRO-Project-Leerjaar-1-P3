@@ -18,13 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $result = get_user($pdo, $username);
 
         if (is_username_wrong($result)) { // If no user found, return error
-            $errors["login_incorrect"] = "Incorrect login info!";
+            $errors["login_incorrect"] = "Username or Password is incorrect";
         } else {
             $hashedpwd = $result["Wachtwoord"];
 
             // Verify password
             if (!is_password_wrong($pwd, $hashedpwd)) {
-                $errors["incorrect_password"] = "Incorrect login info!";
+                $errors["incorrect_password"] = "Username or Password is incorrect";
             }
         }
 

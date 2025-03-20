@@ -88,6 +88,6 @@ echo _gettext("Create");
 
     public function getSourceContext()
     {
-        return new Source("", "database/create_table.twig", "/Users/hernanmartinomolina/Desktop/PROJJJ/phpMyAdmin/templates/database/create_table.twig");
+        return new Source("", "database/create_table.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/database/create_table.twig");
     }
 }
