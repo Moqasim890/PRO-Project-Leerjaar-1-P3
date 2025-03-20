@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/Moqasim890/PRO-Project-Leerjaar-1-P3
+	fetch = +refs/heads/*:refs/remotes/origin/*
