@@ -98,6 +98,10 @@ echo _gettext("Query results operations");
 
     public function getSourceContext()
     {
+<<<<<<< Updated upstream
         return new Source("", "sql/no_results_returned.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/sql/no_results_returned.twig");
+=======
+        return new Source("", "sql/no_results_returned.twig", "/Users/hernanmartinomolina/Guessing game/PRO-Project-Leerjaar-1-P3/Testing/phpMyAdmin_for_testing/templates/sql/no_results_returned.twig");
+>>>>>>> Stashed changes
     }
 }

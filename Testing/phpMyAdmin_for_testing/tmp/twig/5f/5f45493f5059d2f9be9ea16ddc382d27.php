@@ -485,6 +485,10 @@ echo _gettext("Close");
 
     public function getSourceContext()
     {
+<<<<<<< Updated upstream
         return new Source("", "sql/query.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/sql/query.twig");
+=======
+        return new Source("", "sql/query.twig", "/Users/hernanmartinomolina/Guessing game/PRO-Project-Leerjaar-1-P3/Testing/phpMyAdmin_for_testing/templates/sql/query.twig");
+>>>>>>> Stashed changes
     }
 }

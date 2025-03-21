@@ -105,6 +105,10 @@ echo _gettext("(current)");
 
     public function getSourceContext()
     {
+<<<<<<< Updated upstream
         return new Source("", "top_menu.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/top_menu.twig");
+=======
+        return new Source("", "top_menu.twig", "/Users/hernanmartinomolina/Guessing game/PRO-Project-Leerjaar-1-P3/Testing/phpMyAdmin_for_testing/templates/top_menu.twig");
+>>>>>>> Stashed changes
     }
 }

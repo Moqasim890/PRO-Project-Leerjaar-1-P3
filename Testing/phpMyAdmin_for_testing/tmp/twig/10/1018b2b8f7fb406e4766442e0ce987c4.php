@@ -310,6 +310,10 @@ echo _gettext("Go");
 
     public function getSourceContext()
     {
+<<<<<<< Updated upstream
         return new Source("", "view_create.twig", "/Users/hernanmartinomolina/Desktop/account danny pc/Testing/phpMyAdmin_for_testing/templates/view_create.twig");
+=======
+        return new Source("", "view_create.twig", "/Users/hernanmartinomolina/Guessing game/PRO-Project-Leerjaar-1-P3/Testing/phpMyAdmin_for_testing/templates/view_create.twig");
+>>>>>>> Stashed changes
     }
 }

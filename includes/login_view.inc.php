@@ -108,7 +108,13 @@ function GetClassesWithName($Naam = null)
 
                         <?php
                         if (empty($result)) {
+<<<<<<< Updated upstream
                             echo "<tr><td colspan='4'>Nothing found</td></tr>";
+=======
+                            echo "<tr> 
+                        <td colspan='5'>Can't find the last name</td>
+                                  </tr>";
+>>>>>>> Stashed changes
                         } else {
                             foreach ($result as $row) {
                                 echo "<tr>
@@ -120,8 +126,15 @@ function GetClassesWithName($Naam = null)
                                 <td>{$row['Beschikbaarheid']}</td>
                                 <td>{$row['Opmerking']}</td>
                             </tr>";
+<<<<<<< Updated upstream
 
                             }
                         }
 }
 ?>
+=======
+                                                }
+                                            }
+                                        }
+                                            ?>
+>>>>>>> Stashed changes
