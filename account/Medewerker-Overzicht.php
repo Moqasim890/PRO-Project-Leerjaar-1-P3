@@ -1,12 +1,14 @@
 <?php
 require_once "../includes/config_session.inc.php";
-require_once "../includes/login_view.inc.php";
-require_once "../includes/login_model.inc.php";
+require_once "../includes/newMedewerker_view.inc.php";
+require_once "../includes/newMedewerker_model.inc.php";
+
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Account Overview | FitForFun</title>
@@ -14,11 +16,12 @@ require_once "../includes/login_model.inc.php";
     <link href="../img/favicon.ico" rel="icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-    
+
     <!-- I used a custom bootstrap cause I felt like it. DONT CHANGE ANYTHING. Kind regards, Hernan -->
     <link href="../css/style.min.css" rel="stylesheet">
 
 </head>
+
 <body class="bg-white">
     <div id="navbar-placeholder"></div>
 
@@ -31,12 +34,20 @@ require_once "../includes/login_model.inc.php";
             .catch(error => console.error('Error loading navbar:', error));
     </script>
 
- <?php getUsersWithROle('Medewerker'); ?>
+    <!-- Navbar End -->
+    
+    <a style="margin-left: 20px; font-size: 1.1em; font-weight: 700;" href="/account/newMedewerker.php">Add a new employee</a>
+    <?php getEmployeesWithROle(); ?>
+    
+   
+   
 
- <a href="leden-Overzicht.php">leden Overzicht</a>
+
+    
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
